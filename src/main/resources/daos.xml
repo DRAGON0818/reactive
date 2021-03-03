@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="accountDao" class="com.example.Dao.JpaAccountDao">
+        <property name="name" value="Title"></property>
+    </bean>
+    <bean id="itemDao" class="com.example.Dao.JpaItemDao"></bean>
+    <bean id="exampleId" class="com.example.Bean.ExampleBean">
+        <constructor-arg name="id" value="1"/>
+        <constructor-arg name="name" value="Jack"/>
+    </bean>
+
+    <bean id="exampleId1" class="com.example.Bean.ExampleBean">
+        <constructor-arg index="1" value="1"/>
+        <constructor-arg index="0" value="Jack"/>
+    </bean>
+
+
+    <bean id="exampleId2" class="com.example.Bean.ExampleBean">
+        <constructor-arg type="int" value="1"/>
+        <constructor-arg type="java.lang.String" value="Jack"/>
+    </bean>
+    <!--用spring自带的方法，将value的值存入到java.util.Properties对象中-->
+    <bean id="mappings" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+        <property name="properties">
+            <value>
+                jdbc.driver.className=com.mysql.jdbc.Driver
+                jdbc.url=jdbc:mysql://localhost:3306/db
+            </value>
+        </property>
+    </bean>
+
+    <bean name="myDataSource" class="com.example.Bean.BasicDataSource" destroy-method="close"
+         p:driverClassName="com.mysql.jdbc.Driver"
+         p:url="jdbc:mysql://localhost:3306/gb"
+          p:username="root"
+          p:password="19951107q">
+    </bean>
+    <bean id = "dataSource_one" class="com.example.Bean.BasicDataSource"
+          c:_0="1" c:_1="2" c:_2="4"  c:url="19951107q"/>
+
+    <!-- 嵌套属性的赋值 -->
+    <bean id="fred" class="com.example.Bean.CompoundProperties.Fred">
+        <property name="bob" ref="bob"/>
+    </bean>
+    <bean id="bob" class="com.example.Bean.CompoundProperties.Bob"/>
+    <bean id="something" class="com.example.Bean.CompoundProperties.ThingOne">
+        <property name="fred" ref="fred"></property>
+        <property name="fred.bob.summary" value="Compound Property Names is OK"/>
+    </bean>
+
+    <!-- depends on 关键词可以用来指定bean之间的依赖，即可以指定初始化时间的相关性，也可以指定关闭顺序 -->
+
+</beans>
