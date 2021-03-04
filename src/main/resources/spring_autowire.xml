@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="cat" class="com.example.autowire.Cat"></bean>
+    <bean id="person" class="com.example.autowire.Person" autowire="constructor">
+        <constructor-arg index="1" value="55"></constructor-arg>
+    </bean>
+    <bean id="person1" class="com.example.autowire.Person" autowire="byName">
+        <property name="say" value="byName"></property>
+    </bean>
+</beans>
