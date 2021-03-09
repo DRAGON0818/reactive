@@ -15,7 +15,7 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  */
 public class TestApplication {
     public static void main(String[] args) {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("daos.xml", "services.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("daos.xml", "services.xml");
         PetStoreService petStoreService = applicationContext.getBean("p", PetStoreService.class);
         System.out.println(petStoreService.toString());
         PetStoreService p=applicationContext.getBean("petStore",PetStoreService.class);
@@ -47,5 +47,7 @@ public class TestApplication {
 
         ThingOne something = applicationContext.getBean("something", ThingOne.class);
         System.out.println(something.getFred().getBob().getSummary());
+
+        applicationContext.registerShutdownHook();
     }
 }

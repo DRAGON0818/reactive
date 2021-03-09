@@ -7,4 +7,19 @@
         <lookup-method name="createWalletService" bean="walletService"/>
     </bean>
 
+    <bean id="command" class="com.example.methodInjection.Command" scope="prototype" init-method="init"/>
+    <bean id="myCommand" class="com.example.methodInjection.MyCommand" scope="prototype"/>
+    <bean id="commandManager" class="com.example.methodInjection.CommandManager" scope="singleton">
+        <lookup-method name="createCommand" bean="command"/>
+        <lookup-method name="createMyCommand" bean="myCommand"/>
+    </bean>
+
+    <bean id="myCalculator" class="com.example.methodInjection.MyValueCalculator">
+        <replaced-method name="computeValue" replacer="replacementComputeValue">
+            <arg-type>String</arg-type>
+        </replaced-method>
+    </bean>
+
+    <bean id="replacementComputeValue" class="com.example.methodInjection.ReplacementComputeValue"/>
+
 </beans>

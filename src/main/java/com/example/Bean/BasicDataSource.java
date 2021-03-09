@@ -1,9 +1,11 @@
 package com.example.Bean;
 
+import org.springframework.beans.factory.DisposableBean;
+
 /**
  * @author whoami
  */
-public class BasicDataSource {
+public class BasicDataSource implements DisposableBean {
     private String driverClassName;
     private String username;
     private String password;
@@ -53,5 +55,10 @@ public class BasicDataSource {
 
     public void close(){
         System.out.println("My BasicDataSource is closed!");
+    }
+
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("My BasicDataSource is closed by implements!");
     }
 }

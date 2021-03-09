@@ -51,7 +51,6 @@
         <property name="fred" ref="fred"></property>
         <property name="fred.bob.summary" value="Compound Property Names is OK"/>
     </bean>
-
     <!-- depends on 关键词可以用来指定bean之间的依赖，即可以指定初始化时间的相关性，也可以指定关闭顺序 -->
 
 </beans>
