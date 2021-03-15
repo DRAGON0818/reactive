@@ -7,6 +7,9 @@ import org.springframework.core.io.Resource;
 
 import java.io.IOException;
 
+/**
+ * @author whoami
+ */
 public class MoocResource implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -16,7 +19,7 @@ public class MoocResource implements ApplicationContextAware {
     }
 
     public void resource() throws IOException {
-        Resource resource = applicationContext.getResource("config.txt");
+        Resource resource = applicationContext.getResource("daos.xml");
         System.out.println(resource.getFilename());
         System.out.println(resource.contentLength());
     }

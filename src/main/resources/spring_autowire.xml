@@ -7,6 +7,6 @@
         <constructor-arg index="1" value="55"></constructor-arg>
     </bean>
     <bean id="person1" class="com.example.autowire.Person" autowire="byName">
-        <property name="say" value="byName"></property>
+        <property name="say" value="java"></property>
     </bean>
 </beans>

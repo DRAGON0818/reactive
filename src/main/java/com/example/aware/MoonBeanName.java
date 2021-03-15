@@ -8,6 +8,7 @@ import org.springframework.beans.factory.BeanNameAware;
 public class MoonBeanName implements BeanNameAware {
     @Override
     public void setBeanName(String s) {
-        System.out.println("moocBeanName : "+ s + " / hash code :" + this.hashCode());
+        System.out.println(this.hashCode());
+        System.out.println("****************moocBeanName : "+ s + " / hash code :" + this.hashCode());
     }
 }

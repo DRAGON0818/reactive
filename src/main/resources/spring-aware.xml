@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="moocApplicationContext" class="com.example.aware.MoocApplicationAware"/>
+    <bean id="moocBeanName" class="com.example.aware.MoonBeanName"/>
     <bean id="99" class="com.example.aware.MoonBeanName"/>
-    <bean id="998" class="com.example.aware.AwareClass"/>
-    <bean id="996" class="com.example.aware.AwareClass"/>
+    <bean id="A" class="com.example.aware.AwareClass"/>
 </beans>

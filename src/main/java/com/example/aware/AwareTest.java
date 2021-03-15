@@ -27,7 +27,7 @@ public class AwareTest {
     @org.junit.Test
     public void AwareTest(){
         before();
-        System.out.println("AwareTest：" + ac.getBean("998",AwareClass.class).hashCode());
+        System.out.println("AwareTest：" + ac.getBean("A",AwareClass.class).getName());
         after();
     }
 }
