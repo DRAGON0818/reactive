@@ -13,16 +13,29 @@ import java.util.Map;
 @Component
 public class BeanInvoker {
 
-    @Autowired
     private List<BeanInterface> list;
-    /** 因为加了Autowire备注，会自动扫描容器中关于BeanInterface的实例，将ID传入到MAP中的String中，对象放入到BeanInterface中 **/
-    @Autowired
+    /** 因为加了Autowire备注，会自动扫描容器中关于BeanInterface的实例，将ID传入到MAP中的String中，对象放入到BeanInterface中
+     * 最好是对set和构造方法进行Autowire以及Qualifier备注
+     * **/
     private Map<String,BeanInterface> map;
+
+    private BeanInterface beanInterface;
+
+    @Autowired
+    public void setList(List<BeanInterface> list) {
+        this.list = list;
+    }
+
+    @Autowired
+    public void setMap(Map<String, BeanInterface> map) {
+        this.map = map;
+    }
 
     @Autowired
     @Qualifier("beanImlTwo")
-    private BeanInterface beanInterface;
-
+    public void setBeanInterface(BeanInterface beanInterface) {
+        this.beanInterface = beanInterface;
+    }
 
     public void say(){
         System.out.println("List:");

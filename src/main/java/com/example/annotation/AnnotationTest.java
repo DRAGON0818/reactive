@@ -2,6 +2,9 @@ package com.example.annotation;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+/**
+ * @author whoami
+ */
 public class AnnotationTest {
     public static void main(String[] args) {
 
