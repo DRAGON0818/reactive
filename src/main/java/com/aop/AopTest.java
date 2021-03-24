@@ -48,6 +48,7 @@ public class AopTest {
     @Test
     public void testFit() {
         Fit aspectBiz = applicationContext.getBean("aspectBiz",Fit.class);
+        System.out.println(aspectBiz.getClass().getName());
         aspectBiz.filter();
     }
 }

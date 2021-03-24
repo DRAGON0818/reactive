@@ -8,6 +8,6 @@ public class BizLogicImpl implements BizLogic {
     @Override
     public String save() {
         System.out.println("BizLogicImpl");
-        return "Logic";
+        return "Logic save";
     }
 }
