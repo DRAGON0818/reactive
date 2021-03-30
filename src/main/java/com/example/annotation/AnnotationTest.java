@@ -16,6 +16,7 @@ public class AnnotationTest {
 //        System.out.println(beanAnnotation1.hashCode()+","+beanAnnotation.hashCode());
 
         BeanInvoker beanInvoker = applicationContext.getBean("beanInvoker", BeanInvoker.class);
+
         beanInvoker.say();
 
     }
