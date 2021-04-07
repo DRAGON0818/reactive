@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class MyInterceptor {
 
-    @Pointcut("execution (* com.aop.annotationAop.TargetClass.t(..))")
+    @Pointcut("execution (* com.aop.annotationAop.*.*(..))")
     private void anyMethod() {} // 声明一个切入点，anyMethod为切入点名称
 
     @Before("anyMethod()")
