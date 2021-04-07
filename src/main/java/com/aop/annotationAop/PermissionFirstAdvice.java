@@ -19,7 +19,7 @@ public class PermissionFirstAdvice {
     }
 
     @Before("permissionCheck()")
-    public void permissionChechBefore(){
+    public void permissionCheckBefore(){
         System.out.println("before first");
 
     }
