@@ -1,5 +1,7 @@
 package com.Observer;
 
+import reactor.core.publisher.Flux;
+
 import java.util.Observable;
 import java.util.Observer;
 
@@ -8,6 +10,10 @@ import java.util.Observer;
  */
 public class Root {
     public static void main(String[] args) {
+
+        Flux<Integer> just = Flux.just(1, 2, 4, 5);
+        just.subscribe(System.out::println);
+
         House h = new House(10000);
         HousePriceObserver hp1 = new HousePriceObserver("购房者A");
         HousePriceObserver hp2 = new HousePriceObserver("购房者B");

@@ -18,7 +18,7 @@ public class RoleTest {
         role.setNote("note_1");
         redisTemplate.opsForValue().set("role_1", role);
         Role role_R = (Role) redisTemplate.opsForValue().get("role_1");
-        System.out.println(role_R.getRoleName()+role_R.getNote()+role_R.getId()+role_R.getClass());
+        System.out.println(role_R.getRoleName()+" "+role_R.getNote()+" "+role_R.getId()+" "+role_R.getClass());
 
         /**
          * 使用连接池，但是一个服务器可以对应多个客户端的Redis连接。

@@ -42,4 +42,7 @@
 <!--            <aop:around method="doConcurrentOperation" pointcut-ref="idempotentOperation"/>-->
 <!--        </aop:aspect>-->
 <!--    </aop:config>-->
+
+    <!--开启Aspectj 生成代理对象-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 </beans>
